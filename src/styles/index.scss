@@ -149,7 +149,7 @@ img {
 }
 
 .container {
-    padding-inline: 25vw;
+    padding-inline: 18vw;
 }
 
 .main {
@@ -161,10 +161,13 @@ img {
 @import "partials/_navbar.scss";
 @import "partials/_footer.scss";
 @import "partials/_loader.scss";
+@import "partials/_roulette.scss";
+@import "partials/_movie-card.scss";
+
 
 @media screen and (max-width: 1280px) {
     .container {
-        padding-inline: 18vw;
+        padding-inline: 15vw;
     }
 }
 
