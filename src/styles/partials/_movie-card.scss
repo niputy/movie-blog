@@ -1,0 +1,27 @@
+.section {
+    margin-top: 3vw;
+    .col.img {
+        img {
+            height: 100%;
+            max-width: 300px;
+            width: 100%;
+        }
+    }
+    .col.typography {
+        padding-left: 1em;
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.25em;
+            .info {
+                color: var(--primary-color);
+                margin-bottom: 0;
+            }
+            .star {
+                color: var(--primary-color);
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { imageUrl } from "../api/api";
 
 export default function Roulette({ startSpin, startSpinning, movies }){
-    const baseUrl = 'https://image.tmdb.org/t/p/original';
 
     return (
         <div className="box">
@@ -9,7 +9,7 @@ export default function Roulette({ startSpin, startSpinning, movies }){
             <div className="line" />
                 <div className={startSpin ? "window active" : "window"}>
                     <ul className="list">
-                    {movies.map(m => (<li key={m.id}><img src={baseUrl + m.poster_path} alt="" /></li>))}
+                    {movies.map(m => (<li key={m.id}><img src={imageUrl + m.poster_path} alt="" /></li>))}
                     </ul>
                 </div>
             </div>

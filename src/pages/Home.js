@@ -32,8 +32,7 @@ export default function Home(){
         <div >
             {error && <h1>{error}</h1>}
             {isLoading ? <Loader /> : <Roulette startSpin={startSpin} startSpinning={startSpinning} movies={movieList}/>}
-            {showMovieCard && <h1>{movie.title}</h1>}
-            <MovieCard />
+            {showMovieCard && <MovieCard movie={movie}/>}
         </div>
     )
 

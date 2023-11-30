@@ -1,3 +1,4 @@
+export const imageUrl = 'https://image.tmdb.org/t/p/original';
 export const options = {
                 method: 'GET',
                 headers: {
@@ -6,3 +7,4 @@ export const options = {
                 }
             };
 export const movieListUrl = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
+
