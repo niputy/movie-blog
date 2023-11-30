@@ -12,8 +12,8 @@ export default function MovieCard({ movie }){
                 <h1 className="title">{movie.title}</h1>
                 <div className="row">
                     <p className="info">{new Date(movie.release_date).getFullYear()}</p>
-                    <p className="info">111 min</p>
-                    <p className="info">Action</p>
+                    <p className="info">{`${movie.runtime} min`}</p>
+                    <p className="info">{movie.genres[0].name ?? null}</p>
                 </div>
                 <div className="row">
                     {[...Array(10)].map((_, i) => ( 

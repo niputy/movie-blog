@@ -7,4 +7,5 @@ export const options = {
                 }
             };
 export const movieListUrl = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
+export const movieDetailsUrl = 'https://api.themoviedb.org/3/movie/';
 

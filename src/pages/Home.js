@@ -3,7 +3,7 @@ import Roulette from "../components/Roulette";
 import Loader from "../components/Loader";
 import { useFetching } from "../hooks/useFetching";
 import fetch from "node-fetch";
-import { options, movieListUrl } from "../api/api";
+import { options, movieListUrl, movieDetailsUrl } from "../api/api";
 import MovieCard from "../components/MovieCard";
 
 export default function Home(){
@@ -13,12 +13,13 @@ export default function Home(){
     const [showMovieCard, setShowMovieCard] = useState(false);
 
     const [fetchMovies, isLoading, error] = useFetching(async () => {
-        const response = await fetch(movieListUrl, options);
-        const data = await response.json();
+        const movieListRes = await fetch(movieListUrl, options);
+        const data = await movieListRes.json();
         const shuffledMovies = data.results.sort(() => Math.random() - 0.5)
         setMovieList(shuffledMovies);
-        setMovie(shuffledMovies[17]);
-        console.log(shuffledMovies[17]);
+        
+        const movieDetailsRes = await fetch(movieDetailsUrl + shuffledMovies[17].id, options);
+        setMovie(await movieDetailsRes.json());
     })
 
     useEffect(() => {
