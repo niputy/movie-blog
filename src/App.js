@@ -1,8 +1,8 @@
 import Container from "./components/Container";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import About from "./pages/About";
 import Home from "./pages/Home";
+import Wheel from "./pages/Wheel";
 import Settings from "./pages/Settings";
 import { BrowserRouter as Router,
         Routes,
@@ -18,7 +18,7 @@ function App() {
         <Container>
           <Routes>
             <Route path="/" element={<Home />}/>
-            <Route path="/about" element={<About />}/>
+            <Route path="/wheel" element={<Wheel />}/>
             <Route path="/settings" element={<Settings />}/>
           </Routes>
         </Container>

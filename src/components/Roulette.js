@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { imageUrl } from "../api/api";
 
 export default function Roulette({ startSpin, startSpinning, movies }){
@@ -13,7 +12,7 @@ export default function Roulette({ startSpin, startSpinning, movies }){
                     </ul>
                 </div>
             </div>
-            <button className="btn" onClick={startSpinning}>Spin</button>
+            {!startSpin && <button className="btn" onClick={startSpinning}>Spin</button>}
         </div>
     )
 }

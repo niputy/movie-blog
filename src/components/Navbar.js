@@ -15,8 +15,8 @@ export default function Navbar() {
             icon: faHome,
         },
         {
-            name: "About",
-            path: "/about",
+            name: "Wheel",
+            path: "/wheel",
             icon: faUser,
         },
         {
