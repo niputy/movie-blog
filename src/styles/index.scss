@@ -1,10 +1,10 @@
 :root{
-    --background-color: #fff;
-    --background-light: #fff;
+    --background-color: rgb(29, 29, 29);
+    --background-light: rgb(77, 77, 77);
     --shadow-color: rgba(0,0,0,0.2);
-    --primary-color: rgb(255, 0, 86);
-    --text-color: #0A0A0A;
-    --text-light: #575757;
+    --primary-color: rgb(0, 200, 83);
+    --text-color: #ffffff;
+    --text-light: #eceaea;
     --font-size: 16px;
     --animation-speed: 1;
 }
@@ -53,9 +53,7 @@ img {
 }
 
 .custom-image {
-    height: 0;
-    width: 100%;
-    padding-top: 90%;
+    padding-top: 100%;
     position: relative;
     img {
         position: absolute;
@@ -93,7 +91,7 @@ img {
     }
 }
 
-.options-container{
+.options-container {
     box-shadow: 0 5px 10px var(--shadow-color);
     padding: 1em;
     border-radius: 5px;
@@ -163,6 +161,7 @@ img {
 @import "partials/_loader.scss";
 @import "partials/_roulette.scss";
 @import "partials/_movie-card.scss";
+@import "partials/_wheel.scss";
 
 
 @media screen and (max-width: 1280px) {

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 
 export default function Settings(){
     const [settings, setSettings] = useState(null);
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("dark");
     const [primaryColor, setPrimaryColor] = useState(0);
     const [fontSize, setFontSize] = useState(1);
     const [animationSpeed, setAnimationSpeed] = useState(1);
@@ -52,21 +52,21 @@ export default function Settings(){
     ]
 
     const initialSettings = {
-        "--background-color": "#fff",
-        "--background-light": "#fff",
+        "--background-color": "rgb(29, 29, 29)",
+        "--background-light": "rgb(77, 77, 77)",
         "--shadow-color": "rgba(0,0,0,0.2)",
-        "--text-color": "#0A0A0A",
-        "--primary-color": "rgb(255, 0, 86)",
-        "--text-light": "#575757",
+        "--text-color": "#ffffff",
+        "--primary-color": "rgb(0, 200, 83)",
+        "--text-light": "#eceaea",
         "--font-size": "16px",
         "--animation-speed": 1
     };
 
     const primaryColors = [
+        "rgb(0, 200, 83)",
         "rgb(255, 0, 86)",
         "rgb(33, 150, 243)",
         "rgb(255, 193, 7)",
-        "rgb(0, 200, 83)",
         "rgb(156, 39, 176)"
     ]
     const fontSizes = [
@@ -103,15 +103,15 @@ export default function Settings(){
             <div className="section d-block">
                 <h2>Primary Theme</h2>
                 <div className="options-container">
-                    <div className="option light" onClick={() => changeTheme(0)}>
-                        { theme === "light" && (
+                    <div className="option dark" onClick={() => changeTheme(1)}>
+                        { theme === "dark" && (
                             <div className="check">
                                 <FontAwesomeIcon icon={faCheck} />
                             </div>
                         ) }
                     </div>
-                    <div className="option dark" onClick={() => changeTheme(1)}>
-                        { theme === "dark" && (
+                    <div className="option light" onClick={() => changeTheme(0)}>
+                        { theme === "light" && (
                             <div className="check">
                                 <FontAwesomeIcon icon={faCheck} />
                             </div>
