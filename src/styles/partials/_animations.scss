@@ -29,15 +29,6 @@
     }
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg) scale(1);
-    }
-    to {
-        transform: rotate(360deg) scale(1.4);
-    }
-}
-  
 @keyframes spinCircle {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
