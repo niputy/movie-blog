@@ -1,8 +1,11 @@
-import HeroSection from "../components/wheel/HeroSection";
-import FutureSection from "../components/wheel/FutureSection";
-import QuoteSection from "../components/wheel/QuoteSection";
+import HeroSection from "../components/home/HeroSection";
+import FutureSection from "../components/home/FutureSection";
+import QuoteSection from "../components/home/QuoteSection";
 
 export default function Home(){
+    console.log('gg');
+    console.log(process.env.AUTHORIZATION_KEY);
+
     return (
         <div>
             <HeroSection />

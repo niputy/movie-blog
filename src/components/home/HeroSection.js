@@ -3,7 +3,6 @@ import CustomImage from "../CustomImage";
 
 export default function HeroSection() {
     const imagesCount = 9;
-    console.log(process.env.AUTHORIZATION_KEY);
 
     return (
         <div className="section hero">

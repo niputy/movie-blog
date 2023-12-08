@@ -3,7 +3,7 @@ export const options = {
                 method: 'GET',
                 headers: {
                 accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNGU2OGJkZTEwZTViZDZhMjhhMWM2MDhlMDBmMzkxNiIsInN1YiI6IjY1M2E2ZTk4MjRmMmNlMDBlMjZhZGZkNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oizp_6sXtJAWk3EOFcf_NDEC7mDowih7k29PMY9B3Is'
+                Authorization: 'Bearer ' + process.env.AUTHORIZATION_KEY
                 }
             };
 export const movieListUrl = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
