@@ -41,6 +41,14 @@
 }
 
 .section.future {
+    img {
+        border-radius: 5px;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        max-width: 450px;
+        max-height: 450px;
+    }
     .col.typography {
         padding-left: 2em;
         .future-item {

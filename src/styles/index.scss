@@ -54,7 +54,6 @@ img {
 
 .custom-image {
     padding-top: 100%;
-    position: relative;
     img {
         position: absolute;
         top: 0;
@@ -161,7 +160,7 @@ img {
 @import "partials/_loader.scss";
 @import "partials/_roulette.scss";
 @import "partials/_movie-card.scss";
-@import "partials/_wheel.scss";
+@import "partials/_home.scss";
 
 
 @media screen and (max-width: 1280px) {
@@ -202,7 +201,7 @@ img {
         margin-bottom: 1em;
     }
     .footer {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         .footer-section:nth-child(1) {
             grid-column: span 4;
         }

@@ -1,5 +1,3 @@
-import CustomImage from "../CustomImage"
-
 export default function FutureSection(){
     const list = [
         "Create a movie wishlist",
@@ -11,8 +9,8 @@ export default function FutureSection(){
 
     return (
         <div className="section future">
-            <div className="col">
-                <CustomImage src="/img/gallery/img_10.jpg" alt="" />
+            <div className="col gallery">
+                <img src="/img/gallery/img_10.jpg" alt="" />
             </div>
             <div className="col typography">
                 <h1 className="title">In the future you will</h1>
