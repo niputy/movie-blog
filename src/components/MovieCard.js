@@ -11,7 +11,7 @@ export default function MovieCard({ movie }){
             <div className="col typography">
                 <h1 className="title">{movie.title}</h1>
                 <div className="row">
-                    <p className="info">{new Date(movie.release_date).getFullYear()}</p>
+                    <p className="info">{movie.release_date.slice(0, 4)}</p>
                     <p className="info">{`${movie.runtime} min`}</p>
                     <p className="info">{movie.genres[0].name ?? null}</p>
                 </div>
