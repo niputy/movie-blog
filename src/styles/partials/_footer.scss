@@ -1,10 +1,12 @@
 .footer {
     background-color: rgb(21 21 21);
-    color: #fff;
     padding-block: 3em;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
     .footer-section {
         padding-inline: 3em;
         p, a {

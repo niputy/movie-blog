@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Sidebar from "./Sidebar";
-import { faHome, faUser, faCog } from "@fortawesome/free-solid-svg-icons"
+import { faHome, faDharmachakra, faCog, faStar } from "@fortawesome/free-solid-svg-icons"
 import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
@@ -17,7 +17,12 @@ export default function Navbar() {
         {
             name: "Wheel",
             path: "/wheel",
-            icon: faUser,
+            icon: faDharmachakra,
+        },
+        {
+            name: "Watch List",
+            path: "/watchList",
+            icon: faStar,
         },
         {
             name: "Settings",

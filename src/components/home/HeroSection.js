@@ -1,5 +1,5 @@
 import { Link,  } from "react-router-dom";
-import CustomImage from "../CustomImage";
+import CustomImage from "../core/CustomImage";
 
 export default function HeroSection() {
     const imagesCount = 9;

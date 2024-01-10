@@ -16,7 +16,7 @@ export default function MovieCard({ movie }){
                     <p className="info">{movie.genres[0].name ?? null}</p>
                 </div>
                 <div className="row">
-                    {[...Array(10)].map((_, i) => ( 
+                    {rate > 0 && [...Array(10)].map((_, i) => ( 
                             <span key={i} className={i+1 <= rate ? "star" : null}>&#9733;</span>        
                         )
                     )}
