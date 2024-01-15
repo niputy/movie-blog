@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Roulette from "../components/Roulette";
 import Loader from "../components/core/Loader";
 import { useFetching } from "../hooks/useFetching";
 import fetch from "node-fetch";
 import { options, movieListUrl, movieDetailsUrl } from "../api/api";
 import MovieCard from "../components/MovieCard";
+import { GlobalContext } from "../context/GlobalState";
 
 export default function Wheel(){
+    const { settings } = useContext(GlobalContext);
+
     const [movieList, setMovieList] = useState([]);
     const [movie, setMovie] = useState([]);
     const [startSpin, setStartSpin] = useState(false);
@@ -37,10 +40,15 @@ export default function Wheel(){
         </div>
     )
 
+    function getAnimationDuration(duration) {
+        const animationSpeed = settings["--animation-speed"];
+        return duration * animationSpeed;
+    }
+
     function startSpinning() {
         setStartSpin(true);
         setTimeout(() => {
             setShowMovieCard(true);
-        }, 5000);
+        }, getAnimationDuration(5000));
     }
 }
