@@ -12,7 +12,7 @@ export const initialSettings = {
     "animationSpeedNumber": 1,
   };
   
-export const themes = [
+export const themes = [ 
     {
         "--background-color": "#fff",
         "--background-light": "#fff",
