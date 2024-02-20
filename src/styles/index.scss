@@ -25,6 +25,7 @@ body {
     font-family: 'Roboto', sans-serif;
     padding-top: 55px;
     background-color: var(--background-color);
+    overflow-x: hidden;
 }
 
 a {
@@ -156,6 +157,26 @@ img {
     margin-bottom: 50px;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background:#222A35;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #575C66;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #626970;
+}
+
 @import "partials/_animations.scss";
 @import "partials/_navbar.scss";
 @import "partials/_footer.scss";
@@ -165,6 +186,7 @@ img {
 @import "partials/_home.scss";
 @import "partials/_search-bar.scss";
 @import "partials/_watch-list.scss";
+
 
 
 @media screen and (max-width: 1280px) {
