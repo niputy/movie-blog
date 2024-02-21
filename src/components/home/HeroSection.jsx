@@ -1,8 +1,8 @@
 import { Link,  } from "react-router-dom";
-import CustomImage from "../core/CustomImage";
+import Lottie from "lottie-react";
+import animationData from "../../assets/man-watching-movies.json"
 
 export default function HeroSection() {
-    const imagesCount = 9;
 
     return (
         <div className="section hero">
@@ -11,10 +11,8 @@ export default function HeroSection() {
                 <p className="info">Movie Blog is a place where you can find a random movie which you never see before. And our service is absolutely free. So start exploring now!</p>
                 <Link to="/wheel" className="btn">Explore Now</Link>
             </div>
-            <div className="col gallery">
-                {[...Array(imagesCount)].map((_, i) => (
-                    <CustomImage key={i} src={`/img/gallery/img_${i + 1}.jpg`} />
-                ))}
+            <div className="col">
+                <Lottie animationData={animationData}/>
             </div>
         </div>
     )
