@@ -22,7 +22,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />}/>
               <Route path="/wheel" element={<Wheel />}/>
-              <Route path="/watchList" element={<WatchList />}/>
+              <Route path="/watch-list" element={<WatchList />}/>
               <Route path="/settings" element={<Settings />}/>
             </Routes>
           </Container>

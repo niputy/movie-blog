@@ -16,57 +16,32 @@ export const GlobalState = (props) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   useEffect(() => {
-    const settings = state.settings;
-    localStorage.setItem("settings", JSON.stringify(settings));
-    const root = document.documentElement
-    for(let key in settings){
-        root.style.setProperty(key, settings[key])
-    }
+    localStorage.setItem("settings", JSON.stringify(state.settings));
+    const root = document.documentElement;
+    Object.entries(state.settings).forEach(([key, value]) => {
+      root.style.setProperty(key, value);
+    });
   }, [state.settings]);
 
   useEffect(() => {
     localStorage.setItem("watchList", JSON.stringify(state.watchList));
   }, [state.watchList]);
 
-  const addMovie = (movie) => {
-    dispatch({ type: "ADD_MOVIE", payload: movie });
+  const settingsActions = {
+    changeTheme: (payload) => dispatch({ type: "CHANGE_THEME", payload }),
+    changeColor: (payload) => dispatch({ type: "CHANGE_COLOR", payload }),
+    changeFontSize: (payload) => dispatch({ type: "CHANGE_FONT", payload }),
+    changeAnimationSpeed: (payload) =>
+      dispatch({ type: "CHANGE_ANIMATION", payload }),
   };
 
-  const removeMovie = (id) => {
-    dispatch({ type: "REMOVE_MOVIE", payload: id });
+  const movieActions = {
+    addMovie: (movie) => dispatch({ type: "ADD_MOVIE", payload: movie }),
+    removeMovie: (id) => dispatch({ type: "REMOVE_MOVIE", payload: id }),
   };
 
-  const changeTheme = (payload) => {
-    dispatch({ type: "CHANGE_THEME", payload });
-  };
-
-  const changeColor = (payload) => {
-    dispatch({ type: "CHANGE_COLOR", payload });
-  };
-
-  const changeFontSize = (payload) => {
-    dispatch({ type: "CHANGE_FONT", payload });
-  };
-
-  const changeAnimationSpeed = (payload) => {
-    dispatch({ type: "CHANGE_ANIMATION", payload });
-  };
-  
   return (
-    <GlobalContext.Provider
-      value={{
-        settings: state.settings,
-        settingsActions: {
-          changeTheme,
-          changeColor,
-          changeFontSize,
-          changeAnimationSpeed,
-          },
-        watchList: state.watchList,
-        addMovie,
-        removeMovie,
-      }}
-    >
+    <GlobalContext.Provider value={{ ...state, settingsActions : {...settingsActions}, movieActions: {...movieActions} }}>
       {props.children}
     </GlobalContext.Provider>
   );

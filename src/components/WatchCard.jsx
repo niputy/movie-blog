@@ -6,7 +6,7 @@ import { imageUrl } from "../api/api";
 
 export default function WatchCard({ movie }){
 
-    const { removeMovie } = useContext(GlobalContext);
+    const { movieActions } = useContext(GlobalContext);
 
     return (
         <div className="movie-card">
@@ -15,7 +15,7 @@ export default function WatchCard({ movie }){
             <img src={imageUrl + movie.poster_path} alt="" />
       
             <div className="inner-card-controls">
-                <button className="btn ctrl-btn" onClick={() => removeMovie(movie)} >
+                <button className="btn ctrl-btn" onClick={() => movieActions.removeMovie(movie)} >
                     <FontAwesomeIcon size='2xl' icon={faX} />
                 </button>
             </div>

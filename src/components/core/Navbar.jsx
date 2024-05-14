@@ -21,7 +21,7 @@ export default function Navbar() {
         },
         {
             name: "Watch List",
-            path: "/watchList",
+            path: "/watch-list",
             icon: faStar,
         },
         {

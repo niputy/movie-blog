@@ -10,7 +10,7 @@ import { GlobalContext } from "../../context/GlobalState";
 export default function SearchBar() {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
-    const { watchList, addMovie } = useContext(GlobalContext);
+    const { watchList, movieActions } = useContext(GlobalContext);
 
     return (
         <div className="search-bar-container">
@@ -44,7 +44,7 @@ export default function SearchBar() {
 
     function addResult(movie) {
         if (!watchList.some((m) => m.id === movie.id)) {
-            addMovie(movie);
+            movieActions.addMovie(movie);
         }
         setQuery("");
         setResults([]);
