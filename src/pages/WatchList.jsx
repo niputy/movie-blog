@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import WatchCard from "../components/WatchCard";
 import SearchBar from "../components/search/SearchBar";
-import { GlobalContext } from "../context/GlobalState";
+import { useSelector } from "react-redux";
 
 export default function WatchList(){
-    const { watchList } = useContext(GlobalContext);
+    const watchList = useSelector((state) => state.watchList.watchList)
 
     return (
         <>

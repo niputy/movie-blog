@@ -9,11 +9,12 @@ import { BrowserRouter as Router,
         Routes,
         Route 
         } from "react-router-dom";
-import { GlobalState } from "./context/GlobalState";
+import { Provider } from 'react-redux';
+import store from './context/store';
 
 function App() {
   return (
-    <GlobalState>
+    <Provider store={store}>
       <Router>
         <div className="app"> 
           <Navbar />
@@ -30,7 +31,7 @@ function App() {
           <Footer />
         </div>
       </Router>
-    </GlobalState>
+    </Provider>
   );
 }
 

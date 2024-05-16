@@ -1,11 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
-import { useState, useEffect, useContext } from "react"
-import { GlobalContext } from "../context/GlobalState";
+import { useState, useEffect } from "react"
 import { primaryColors, fontSizes, animationSpeeds } from "../context/SettingsThemes";
+import { useDispatch, useSelector } from "react-redux";
+import { settingsActions } from "../context/SettingsReducer";
 
 export default function Settings(){
-    const { settings, settingsActions } = useContext(GlobalContext);
+    const settings = useSelector((state) => state.settings.settings);
+    const dispatch = useDispatch();
 
     const [theme, setTheme] = useState("dark");
     const [primaryColor, setPrimaryColor] = useState(0);
@@ -84,21 +86,21 @@ export default function Settings(){
 
     function changeThemeNumber(num){
         setTheme(num === 0 ? "light" : "dark")
-        settingsActions.changeTheme(num)
+        dispatch(settingsActions.changeTheme(num))
     }
 
     function changeColorNumber(num){
         setPrimaryColor(num)
-        settingsActions.changeColor(num) 
+        dispatch(settingsActions.changeColor(num)) 
     }
 
     function changeFontSize(num){
         setFontSize(num)
-        settingsActions.changeFontSize(num) 
+        dispatch(settingsActions.changeFontSize(num)) 
     }
 
     function changeAnimationSpeed(i){
         setAnimationSpeed(i)
-        settingsActions.changeAnimationSpeed(i);
+        dispatch(settingsActions.changeAnimationSpeed(i));
     }
 }

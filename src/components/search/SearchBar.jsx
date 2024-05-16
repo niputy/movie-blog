@@ -4,13 +4,14 @@ import { useState } from "react";
 import { movieSearchUrl, options } from "../../api/api";
 import fetch from "node-fetch";
 import SearchResults from "./SearchResults";
-import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalState";
+import { useDispatch, useSelector } from "react-redux";
+import { addMovie } from "../../context/WatchListReducer";
 
 export default function SearchBar() {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
-    const { watchList, movieActions } = useContext(GlobalContext);
+    const watchList = useSelector((state) => state.watchList.watchList)
+    const dispatch = useDispatch();
 
     return (
         <div className="search-bar-container">
@@ -44,7 +45,7 @@ export default function SearchBar() {
 
     function addResult(movie) {
         if (!watchList.some((m) => m.id === movie.id)) {
-            movieActions.addMovie(movie);
+            dispatch(addMovie(movie))
         }
         setQuery("");
         setResults([]);

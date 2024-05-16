@@ -1,14 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import Roulette from "../components/Roulette";
 import Loader from "../components/core/Loader";
 import { useFetching } from "../hooks/useFetching";
 import fetch from "node-fetch";
 import { options, movieListUrl, movieDetailsUrl } from "../api/api";
 import MovieCard from "../components/MovieCard";
-import { GlobalContext } from "../context/GlobalState";
+import { useSelector } from "react-redux";
 
 export default function Wheel(){
-    const { settings } = useContext(GlobalContext);
+    const settings = useSelector((state) => state.settings.settings);
 
     const [movieList, setMovieList] = useState([]);
     const [movie, setMovie] = useState([]);
